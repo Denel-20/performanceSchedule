@@ -1,0 +1,28 @@
+#subject-list {
+    margin-bottom: 20px;
+}
+
+.subject-bar {
+    background-color: lightgrey;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.subject-bar.expanded {
+    height: auto;
+    padding: 20px;
+    background-color: #e0e0e0;
+}
+
+.subject-details {
+    display: none;
+}
+
+.subject-bar.expanded .subject-details {
+    display: block;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

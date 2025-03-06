@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="show-subjects" onclick="toggleSubjects()">과목 선택</button>
+    <div id="subject-list" style="display: none;">
+        <div>
+            <input type="checkbox" id="sac" value="SAC" onchange="updateSubjects()">
+            <label for="math">화법과 작문</label>
+        </div>
+        <div>
+            <input type="checkbox" id="dkorean" value="DKorean" onchange="updateSubjects()">
+            <label for="math">심화국어</label>
+        </div>
+        <div>
+            <input type="checkbox" id="math" value="Math" onchange="updateSubjects()">
+            <label for="math">심화수학</label>
+        </div>
+        <div>
+            <input type="checkbox" id="english" value="English" onchange="updateSubjects()">
+            <label for="science">심화영어</label>
+        </div>
+    </div>
+    <div id="selected-subjects"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
