@@ -10,20 +10,61 @@
     <button id="show-subjects" onclick="toggleSubjects()">과목 선택</button>
     <div id="subject-list" style="display: none;">
         <div>
-            <input type="checkbox" id="sac" value="SAC" onchange="updateSubjects()">
-            <label for="math">화법과 작문</label>
+            <input type="checkbox" id="sac" value="SAC" onchange="toggleParentAndChildren('sac', 'sac-children'); updateSubjects()">
+            <label onclick="toggleDetails('sac-children')">화법과 작문</label>
+            <div id="sac-children" class="child-list" style="display: none;">
+                <input type="checkbox" id="sac-a" value="SACA" class="sac-child" onchange="updateParentCheckbox('sac', 'sac-children'); updateSubjects()">
+                <label for="sac-a">화법과 작문A</label>
+                <br>
+                <input type="checkbox" id="sac-b" value="SACB" class="sac-child" onchange="updateParentCheckbox('sac', 'sac-children'); updateSubjects()">
+                <label for="sac-b">화법과 작문B</label>
+                <br>
+                <input type="checkbox" id="sac-c" value="SACC" class="sac-child" onchange="updateParentCheckbox('sac', 'sac-children'); updateSubjects()">
+                <label for="sac-c">화법과 작문C</label>
+            </div>
         </div>
         <div>
-            <input type="checkbox" id="dkorean" value="DKorean" onchange="updateSubjects()">
-            <label for="math">심화국어</label>
+            <input type="checkbox" id="dkorean" value="DKorean" onchange="toggleParentAndChildren('dkorean', 'dkorean-children'); updateSubjects()">
+            <label onclick="toggleDetails('dkorean-children')">심화국어</label>
+            <div id="dkorean-children" class="child-list" style="display: none;">
+                <input type="checkbox" id="dkorean-a" value="DKoreanA" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
+                <label for="dkorean-a">심화국어A</label>
+                <br>
+                <input type="checkbox" id="dkorean-b" value="DKoreanB" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
+                <label for="dkorean-b">심화국어B</label>
+                <br>
+                <input type="checkbox" id="dkorean-c" value="DKoreanC" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
+                <label for="dkorean-c">심화국어C</label>
+                <br>
+                <input type="checkbox" id="dkorean-d" value="DKoreanD" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
+                <label for="dkorean-d">심화국어D</label>
+            </div>
         </div>
         <div>
-            <input type="checkbox" id="math" value="Math" onchange="updateSubjects()">
-            <label for="math">심화수학</label>
+            <input type="checkbox" id="math" value="Math" onchange="toggleParentAndChildren('math', 'math-children'); updateSubjects()">
+            <label onclick="toggleDetails('math-children')">심화수학</label>
+            <div id="math-children" class="child-list" style="display: none;">
+                <input type="checkbox" id="math-a" value="MathA" class="math-child" onchange="updateParentCheckbox('math', 'math-children'); updateSubjects()">
+                <label for="math-a">심화수학A</label>
+                <br>
+                <input type="checkbox" id="math-b" value="MathB" class="math-child" onchange="updateParentCheckbox('math', 'math-children'); updateSubjects()">
+                <label for="math-b">심화수학B</label>
+            </div>
         </div>
         <div>
-            <input type="checkbox" id="english" value="English" onchange="updateSubjects()">
-            <label for="science">심화영어</label>
+            <input type="checkbox" id="english" value="English" onchange="toggleParentAndChildren('english', 'english-children'); updateSubjects()">
+            <label onclick="toggleDetails('english-children')">심화영어</label>
+            <div id="english-children" class="child-list" style="display: none;">
+                <input type="checkbox" id="english-a" value="EnglishA" class="english-child" onchange="updateParentCheckbox('english', 'english-children'); updateSubjects()">
+                <label for="english-a">심화영어A</label>
+                <br>
+                <input type="checkbox" id="english-b" value="EnglishB" class="english-child" onchange="updateParentCheckbox('english', 'english-children'); updateSubjects()">
+                <label for="english-b">심화영어B</label>
+            </div>
+        </div>
+        <div>
+            <input type="checkbox" id="art" value="Art" onchange="updateSubjects()">
+            <label for="art">미술</label>
         </div>
     </div>
     <div id="selected-subjects"></div>
