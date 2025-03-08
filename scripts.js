@@ -64,6 +64,20 @@ function updateSubjects() {
         { id: 'math-b', data: '2025. 0. 0 (0교시)' , name: '심화수학B', details: '내용이 지정되지 않았습니다.' },
         { id: 'physics-c', data: '2025. 0. 0 (0교시)' , name: '물리2C', details: '내용이 지정되지 않았습니다.' },
         { id: 'physics-d', data: '2025. 0. 0 (0교시)' , name: '물리2D', details: '내용이 지정되지 않았습니다.' },
+        { id: 'chemistry-a', data: '2025. 0. 0 (0교시)' , name: '화학2A', details: '내용이 지정되지 않았습니다.' },
+        { id: 'chemistry-b', data: '2025. 0. 0 (0교시)' , name: '화학2B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'chemistry-c', data: '2025. 0. 0 (0교시)' , name: '화학2C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'life-a', data: '2025. 0. 0 (0교시)' , name: '생명2A', details: '내용이 지정되지 않았습니다.' },
+        { id: 'life-b', data: '2025. 0. 0 (0교시)' , name: '생명2B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'life-c', data: '2025. 0. 0 (0교시)' , name: '생명2C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'life-d', data: '2025. 0. 0 (0교시)' , name: '생명2C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'earth-b', data: '2025. 0. 0 (0교시)' , name: '지구2B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'earth-d', data: '2025. 0. 0 (0교시)' , name: '지구2D', details: '내용이 지정되지 않았습니다.' },
+        { id: 'travel-ag', data: '2025. 0. 0 (0교시)' , name: '여행지리A가', details: '내용이 지정되지 않았습니다.' },
+        { id: 'travel-an', data: '2025. 0. 0 (0교시)' , name: '여행지리A나', details: '내용이 지정되지 않았습니다.' },
+        { id: 'travel-b', data: '2025. 0. 0 (0교시)' , name: '여행지리B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'travel-c', data: '2025. 0. 0 (0교시)' , name: '여행지리C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'science', data: '2025. 0. 0 (0교시)' , name: '과학 과제 연구', details: '내용이 지정되지 않았습니다.' },
         { id: 'art', data: '2025. 3. 14 (4교시)' , name: '미술', details: '진로와 관련된 책 한권 빌려오기' }
     ];
 
