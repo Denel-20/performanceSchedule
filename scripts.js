@@ -48,18 +48,23 @@ function updateParentCheckbox(parentId, childrenId) {
 
 function updateSubjects() {
     const subjects = [
-        { id: 'sac-a', data: '2025. 0. 0(0교시)' , name: '화법과 작문A', details: '내용이 지정되지 않았습니다.' },
-        { id: 'sac-b', data: '2025. 0. 0(0교시)' , name: '화법과 작문B', details: '내용이 지정되지 않았습니다.' },
-        { id: 'sac-c', data: '2025. 0. 0(0교시)' , name: '화법과 작문C', details: '내용이 지정되지 않았습니다.' },
-        { id: 'dkorean-a', data: '2025. 0. 0(0교시)' , name: '심화국어A', details: '내용이 지정되지 않았습니다.' },
-        { id: 'dkorean-b', data: '2025. 0. 0(0교시)' , name: '심화국어B', details: '내용이 지정되지 않았습니다.' },
-        { id: 'dkorean-c', data: '2025. 0. 0(0교시)' , name: '심화국어C', details: '내용이 지정되지 않았습니다.' },
-        { id: 'dkorean-d', data: '2025. 0. 0(0교시)' , name: '심화국어D', details: '내용이 지정되지 않았습니다.' },
-        { id: 'math-a', data: '2025. 0. 0(0교시)' , name: '심화수학A', details: '내용이 지정되지 않았습니다.' },
-        { id: 'math-b', data: '2025. 0. 0(0교시)' , name: '심화수학B', details: '내용이 지정되지 않았습니다.' },
-        { id: 'english-a', data: '2025. 0. 0(0교시)' , name: '심화영어A', details: '내용이 지정되지 않았습니다.' },
-        { id: 'english-b', data: '2025. 0. 0(0교시)' , name: '심화영어B', details: '내용이 지정되지 않았습니다.' },
-        { id: 'art', data: '2025. 3. 14(4교시)' , name: '미술', details: '진로와 관련된 책 한권 빌려오기' }
+        { id: 'dkorean-a', data: '2025. 0. 0 (0교시)' , name: '심화국어A', details: '내용이 지정되지 않았습니다.' },
+        { id: 'dkorean-b', data: '2025. 0. 0 (0교시)' , name: '심화국어B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'dkorean-c', data: '2025. 0. 0 (0교시)' , name: '심화국어C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'dkorean-d', data: '2025. 0. 0 (0교시)' , name: '심화국어D', details: '내용이 지정되지 않았습니다.' },
+        { id: 'geometry-b', data: '2025. 0. 0 (0교시)' , name: '기하B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'geometry-c', data: '2025. 0. 0 (0교시)' , name: '기하C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'geometry-d', data: '2025. 0. 0 (0교시)' , name: '기하D', details: '내용이 지정되지 않았습니다.' },
+        { id: 'sac-a', data: '2025. 0. 0 (0교시)' , name: '화법과 작문A', details: '내용이 지정되지 않았습니다.' },
+        { id: 'sac-b', data: '2025. 0. 0 (0교시)' , name: '화법과 작문B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'sac-c', data: '2025. 0. 0 (0교시)' , name: '화법과 작문C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'english-a', data: '2025. 0. 0 (0교시)' , name: '심화영어A', details: '내용이 지정되지 않았습니다.' },
+        { id: 'english-b', data: '2025. 0. 0 (0교시)' , name: '심화영어B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'math-a', data: '2025. 0. 0 (0교시)' , name: '심화수학A', details: '내용이 지정되지 않았습니다.' },
+        { id: 'math-b', data: '2025. 0. 0 (0교시)' , name: '심화수학B', details: '내용이 지정되지 않았습니다.' },
+        { id: 'physics-c', data: '2025. 0. 0 (0교시)' , name: '물리2C', details: '내용이 지정되지 않았습니다.' },
+        { id: 'physics-d', data: '2025. 0. 0 (0교시)' , name: '물리2D', details: '내용이 지정되지 않았습니다.' },
+        { id: 'art', data: '2025. 3. 14 (4교시)' , name: '미술', details: '진로와 관련된 책 한권 빌려오기' }
     ];
 
     const subjectContainer = document.getElementById('selected-subjects');
