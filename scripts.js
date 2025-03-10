@@ -1,4 +1,3 @@
-// 과목 리스트 토글 (보이기/숨기기)
 function toggleSubjects() {
     const subjectList = document.getElementById('subject-list');
     if (subjectList.style.display === 'none') {
@@ -8,7 +7,6 @@ function toggleSubjects() {
     }
 }
 
-// 부모-자식 체크박스 상태 동기화
 function toggleParentAndChildren(parentId, childrenId) {
     const parentCheckbox = document.getElementById(parentId);
     const childrenCheckboxes = document.querySelectorAll(`#${childrenId} input[type="checkbox"]`);
@@ -18,7 +16,6 @@ function toggleParentAndChildren(parentId, childrenId) {
     });
 }
 
-// 개별 항목의 하위 내용 표시/숨기기
 function toggleDetails(itemId) {
     const itemContent = document.getElementById(itemId);
     if (itemContent.style.display === 'none') {
@@ -96,7 +93,6 @@ function updateSubjects() {
         subjectBar.classList.add('subject-bar');
         subjectBar.textContent = `${subject.name} - ${subject.data}`;
 
-        // 날짜를 기준으로 배경색 설정
         const subjectDate = new Date(subject.data.split('(')[0].trim());
         const today = new Date();
         const tomorrow = new Date();
@@ -109,7 +105,7 @@ function updateSubjects() {
         } else if (subjectDate > tomorrow && subjectDate <= weekLater) {
             subjectBar.style.backgroundColor = '#FFFF8C';
         }  else if (subjectDate > weekLater) {
-            subjectBar.style.backgroundColor = '#C8FAC8';
+            subjectBar.style.backgroundColor = '#C0FFFF';
         } else if (subjectDate < today) {
             subjectBar.style.backgroundColor = '#F4F4F4';
         }
