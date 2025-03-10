@@ -105,13 +105,13 @@ function updateSubjects() {
         weekLater.setDate(today.getDate() + 7);
 
         if (subjectDate.toDateString() === today.toDateString() || subjectDate.toDateString() === tomorrow.toDateString()) {
-            subjectBar.style.backgroundColor = '#FFBBC6'; // 오늘 또는 내일
+            subjectBar.style.backgroundColor = '#FFBBC6';
         } else if (subjectDate > tomorrow && subjectDate <= weekLater) {
-            subjectBar.style.backgroundColor = '#FFFF8C'; // 1주일 이내
-        }  else if (subjectDate > weekLater && subjectDate <= weekLaterT) {
-            subjectBar.style.backgroundColor = '#C8FAC8'; // 2주일 이내
+            subjectBar.style.backgroundColor = '#FFFF8C';
+        }  else if (subjectDate > weekLater) {
+            subjectBar.style.backgroundColor = '#C8FAC8';
         } else if (subjectDate < today) {
-            subjectBar.style.backgroundColor = '#F4F4F4'; // 과거
+            subjectBar.style.backgroundColor = '#F4F4F4';
         }
 
         if (Array.isArray(subject.details)) {
