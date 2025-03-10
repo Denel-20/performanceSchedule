@@ -1,9 +1,10 @@
 #subject-list {
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
 .subject-bar {
-    background-color: lightgrey;
+    background-color: #F4F4F4;
     margin: 5px 0;
     padding: 10px;
     cursor: pointer;
@@ -11,7 +12,7 @@
 .subject-bar.expanded {
     height: auto;
     padding: 20px;
-    background-color: #e0e0e0;
+    background-color: #F4F4F4;
 }
 .subject-details {
     display: none;
@@ -19,7 +20,7 @@
 .subject-bar.expanded .subject-details {
     display: block;
     margin-top: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 10px;
     border: 1px solid #ccc;
 }

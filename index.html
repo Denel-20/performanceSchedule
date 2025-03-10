@@ -6,164 +6,160 @@
     <title>Performance Schedule</title>
     <style>
         body {
-            background: radial-gradient(circle, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1227&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover; /* 이미지를 화면에 꽉 차게 */
-            background-repeat: no-repeat; /* 이미지 반복 제거 */
-            background-position: center; /* 이미지를 중앙 정렬 */
-            height: 100vh; /* 전체 화면 높이 */
-            margin: 0; /* 여백 제거 */
+            background-image: url('image/wood.jpg');
+            background-repeat: repeat;
+            background-size: 4%;
         }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <label id="show-subjects" onclick="toggleSubjects()" style="font-size: 25px; color: white; user-select: none;">과목 선택</label>
+    <label id="show-subjects" onclick="toggleSubjects()" style="font-size: 30px; color: black; font-weight: bold; user-select: none;">과목 선택</label>
     <div id="subject-list" style="display: none;">
         <div>
             <input type="checkbox" id="dkorean" value="DKorean" onchange="toggleParentAndChildren('dkorean', 'dkorean-children'); updateSubjects()">
-            <label onclick="toggleDetails('dkorean-children')" style="user-select: none; color: white;">심화국어</label>
+            <label onclick="toggleDetails('dkorean-children')" style="user-select: none; color: black;">심화국어</label>
             <div id="dkorean-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="dkorean-a" value="DKoreanA" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
-                <label for="dkorean-a" style="user-select: none; color: white;">심화국어A</label>
+                <label for="dkorean-a" style="user-select: none; color: black;">심화국어A</label>
                 <br>
                 <input type="checkbox" id="dkorean-b" value="DKoreanB" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
-                <label for="dkorean-b" style="user-select: none; color: white;">심화국어B</label>
+                <label for="dkorean-b" style="user-select: none; color: black;">심화국어B</label>
                 <br>
                 <input type="checkbox" id="dkorean-c" value="DKoreanC" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
-                <label for="dkorean-c" style="user-select: none; color: white;">심화국어C</label>
+                <label for="dkorean-c" style="user-select: none; color: black;">심화국어C</label>
                 <br>
                 <input type="checkbox" id="dkorean-d" value="DKoreanD" class="dkorean-child" onchange="updateParentCheckbox('dkorean', 'dkorean-children'); updateSubjects()">
-                <label for="dkorean-d" style="user-select: none; color: white;">심화국어D</label>
+                <label for="dkorean-d" style="user-select: none; color: black;">심화국어D</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="geometry" value="Geometry" onchange="toggleParentAndChildren('geometry', 'geometry-children'); updateSubjects()">
-            <label onclick="toggleDetails('geometry-children')" style="user-select: none; color: white;">기하</label>
+            <label onclick="toggleDetails('geometry-children')" style="user-select: none; color: black;">기하</label>
             <div id="geometry-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="geometry-b" value="GeometryB" class="geometry-child" onchange="updateParentCheckbox('geometry', 'geometry-children'); updateSubjects()">
-                <label for="geometry-b" style="user-select: none; color: white;">기하B</label>
+                <label for="geometry-b" style="user-select: none; color: black;">기하B</label>
                 <br>
                 <input type="checkbox" id="geometry-c" value="GeometryC" class="geometry-child" onchange="updateParentCheckbox('geometry', 'geometry-children'); updateSubjects()">
-                <label for="geometry-c" style="user-select: none; color: white;">기하C</label>
+                <label for="geometry-c" style="user-select: none; color: black;">기하C</label>
                 <br>
                 <input type="checkbox" id="geometry-d" value="GeometryD" class="geometry-child" onchange="updateParentCheckbox('geometry', 'geometry-children'); updateSubjects()">
-                <label for="geometry-d" style="user-select: none; color: white;">기하D</label>
+                <label for="geometry-d" style="user-select: none; color: black;">기하D</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="sac" value="SAC" onchange="toggleParentAndChildren('sac', 'sac-children'); updateSubjects()">
-            <label onclick="toggleDetails('sac-children')" style="user-select: none; color: white;">화법과 작문</label>
+            <label onclick="toggleDetails('sac-children')" style="user-select: none; color: black;">화법과 작문</label>
             <div id="sac-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="sac-a" value="SACA" class="sac-child" onchange="updateParentCheckbox('sac', 'sac-children'); updateSubjects()">
-                <label for="sac-a" style="user-select: none; color: white;">화법과 작문A</label>
+                <label for="sac-a" style="user-select: none; color: black;">화법과 작문A</label>
                 <br>
                 <input type="checkbox" id="sac-b" value="SACB" class="sac-child" onchange="updateParentCheckbox('sac', 'sac-children'); updateSubjects()">
-                <label for="sac-b" style="user-select: none; color: white;">화법과 작문B</label>
+                <label for="sac-b" style="user-select: none; color: black;">화법과 작문B</label>
                 <br>
                 <input type="checkbox" id="sac-c" value="SACC" class="sac-child" onchange="updateParentCheckbox('sac', 'sac-children'); updateSubjects()">
-                <label for="sac-c" style="user-select: none; color: white;">화법과 작문C</label>
+                <label for="sac-c" style="user-select: none; color: black;">화법과 작문C</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="english" value="English" onchange="toggleParentAndChildren('english', 'english-children'); updateSubjects()">
-            <label onclick="toggleDetails('english-children')" style="user-select: none; color: white;">심화영어</label>
+            <label onclick="toggleDetails('english-children')" style="user-select: none; color: black;">심화영어</label>
             <div id="english-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="english-a" value="EnglishA" class="english-child" onchange="updateParentCheckbox('english', 'english-children'); updateSubjects()">
-                <label for="english-a" style="user-select: none; color: white;">심화영어A</label>
+                <label for="english-a" style="user-select: none; color: black;">심화영어A</label>
                 <br>
                 <input type="checkbox" id="english-b" value="EnglishB" class="english-child" onchange="updateParentCheckbox('english', 'english-children'); updateSubjects()">
-                <label for="english-b" style="user-select: none; color: white;">심화영어B</label>
+                <label for="english-b" style="user-select: none; color: black;">심화영어B</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="math" value="Math" onchange="toggleParentAndChildren('math', 'math-children'); updateSubjects()">
-            <label onclick="toggleDetails('math-children')" style="user-select: none; color: white;">심화수학</label>
+            <label onclick="toggleDetails('math-children')" style="user-select: none; color: black;">심화수학</label>
             <div id="math-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="math-a" value="MathA" class="math-child" onchange="updateParentCheckbox('math', 'math-children'); updateSubjects()">
-                <label for="math-a" style="user-select: none; color: white;">심화수학A</label>
+                <label for="math-a" style="user-select: none; color: black;">심화수학A</label>
                 <br>
                 <input type="checkbox" id="math-b" value="MathB" class="math-child" onchange="updateParentCheckbox('math', 'math-children'); updateSubjects()">
-                <label for="math-b" style="user-select: none; color: white;">심화수학B</label>
+                <label for="math-b" style="user-select: none; color: black;">심화수학B</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="physics" value="Physics" onchange="toggleParentAndChildren('physics', 'physics-children'); updateSubjects()">
-            <label onclick="toggleDetails('physics-children')" style="user-select: none; color: white;">물리2</label>
+            <label onclick="toggleDetails('physics-children')" style="user-select: none; color: black;">물리2</label>
             <div id="physics-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="physics-c" value="PhysicsC" class="physics-child" onchange="updateParentCheckbox('physics', 'physics-children'); updateSubjects()">
-                <label for="physics-c" style="user-select: none; color: white;">물리2C</label>
+                <label for="physics-c" style="user-select: none; color: black;">물리2C</label>
                 <br>
                 <input type="checkbox" id="physics-d" value="PhysicsD" class="physics-child" onchange="updateParentCheckbox('physics', 'physics-children'); updateSubjects()">
-                <label for="physics-d" style="user-select: none; color: white;">물리2D</label>
+                <label for="physics-d" style="user-select: none; color: black;">물리2D</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="chemistry" value="Chemistry" onchange="toggleParentAndChildren('chemistry', 'chemistry-children'); updateSubjects()">
-            <label onclick="toggleDetails('chemistry-children')" style="user-select: none; color: white;">화학2</label>
+            <label onclick="toggleDetails('chemistry-children')" style="user-select: none; color: black;">화학2</label>
             <div id="chemistry-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="chemistry-a" value="ChemistryA" class="chemistry-child" onchange="updateParentCheckbox('chemistry', 'chemistry-children'); updateSubjects()">
-                <label for="chemistry-a" style="user-select: none; color: white;">화학2A</label>
+                <label for="chemistry-a" style="user-select: none; color: black;">화학2A</label>
                 <br>
                 <input type="checkbox" id="chemistry-b" value="ChemistryB" class="chemistry-child" onchange="updateParentCheckbox('chemistry', 'chemistry-children'); updateSubjects()">
-                <label for="chemistry-b" style="user-select: none; color: white;">화학2B</label>
+                <label for="chemistry-b" style="user-select: none; color: black;">화학2B</label>
                 <br>
                 <input type="checkbox" id="chemistry-c" value="ChemistryC" class="chemistry-child" onchange="updateParentCheckbox('chemistry', 'chemistry-children'); updateSubjects()">
-                <label for="chemistry-c" style="user-select: none; color: white;">화학2C</label>
+                <label for="chemistry-c" style="user-select: none; color: black;">화학2C</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="life" value="Life" onchange="toggleParentAndChildren('life', 'life-children'); updateSubjects()">
-            <label onclick="toggleDetails('life-children')" style="user-select: none; color: white;">생명2</label>
+            <label onclick="toggleDetails('life-children')" style="user-select: none; color: black;">생명2</label>
             <div id="life-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="life-a" value="LifeA" class="life-child" onchange="updateParentCheckbox('life', 'life-children'); updateSubjects()">
-                <label for="life-a" style="user-select: none; color: white;">생명2A</label>
+                <label for="life-a" style="user-select: none; color: black;">생명2A</label>
                 <br>
                 <input type="checkbox" id="life-b" value="LifeB" class="life-child" onchange="updateParentCheckbox('life', 'life-children'); updateSubjects()">
-                <label for="life-b" style="user-select: none; color: white;">생명2B</label>
+                <label for="life-b" style="user-select: none; color: black;">생명2B</label>
                 <br>
                 <input type="checkbox" id="life-c" value="LifeC" class="life-child" onchange="updateParentCheckbox('life', 'life-children'); updateSubjects()">
-                <label for="life-c" style="user-select: none; color: white;">생명2C</label>
+                <label for="life-c" style="user-select: none; color: black;">생명2C</label>
                 <br>
                 <input type="checkbox" id="life-d" value="LifeD" class="life-child" onchange="updateParentCheckbox('life', 'life-children'); updateSubjects()">
-                <label for="life-d" style="user-select: none; color: white;">생명2D</label>
+                <label for="life-d" style="user-select: none; color: black;">생명2D</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="earth" value="Earth" onchange="toggleParentAndChildren('earth', 'earth-children'); updateSubjects()">
-            <label onclick="toggleDetails('earth-children')" style="user-select: none; color: white;">지구2</label>
+            <label onclick="toggleDetails('earth-children')" style="user-select: none; color: black;">지구2</label>
             <div id="earth-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="earth-b" value="EarthB" class="earth-child" onchange="updateParentCheckbox('earth', 'earth-children'); updateSubjects()">
-                <label for="earth-b" style="user-select: none; color: white;">지구2B</label>
+                <label for="earth-b" style="user-select: none; color: black;">지구2B</label>
                 <br>
                 <input type="checkbox" id="earth-d" value="EarthD" class="earth-child" onchange="updateParentCheckbox('earth', 'earth-children'); updateSubjects()">
-                <label for="earth-d" style="user-select: none; color: white;">지구2D</label>
+                <label for="earth-d" style="user-select: none; color: black;">지구2D</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="travel" value="Travel" onchange="toggleParentAndChildren('travel', 'travel-children'); updateSubjects()">
-            <label onclick="toggleDetails('travel-children')" style="user-select: none; color: white;">여행지리</label>
+            <label onclick="toggleDetails('travel-children')" style="user-select: none; color: black;">여행지리</label>
             <div id="travel-children" class="child-list" style="display: none;">
                 <input type="checkbox" id="travel-ag" value="TravelAg" class="travel-child" onchange="updateParentCheckbox('travel', 'travel-children'); updateSubjects()">
-                <label for="travel-ag" style="user-select: none; color: white;">여행지리A가</label>
+                <label for="travel-ag" style="user-select: none; color: black;">여행지리A가</label>
                 <br>
                 <input type="checkbox" id="travel-an" value="TravelAn" class="travel-child" onchange="updateParentCheckbox('travel', 'travel-children'); updateSubjects()">
-                <label for="travel-an" style="user-select: none; color: white;">여행지리A나</label>
+                <label for="travel-an" style="user-select: none; color: black;">여행지리A나</label>
                 <br>
                 <input type="checkbox" id="travel-b" value="TravelB" class="travel-child" onchange="updateParentCheckbox('travel', 'travel-children'); updateSubjects()">
-                <label for="travel-b" style="user-select: none; color: white;">여행지리B</label>
+                <label for="travel-b" style="user-select: none; color: black;">여행지리B</label>
                 <br>
                 <input type="checkbox" id="travel-c" value="TravelC" class="travel-child" onchange="updateParentCheckbox('travel', 'travel-children'); updateSubjects()">
-                <label for="travel-c" style="user-select: none; color: white;">여행지리C</label>
+                <label for="travel-c" style="user-select: none; color: black;">여행지리C</label>
             </div>
         </div>
         <div>
             <input type="checkbox" id="science" value="Science" onchange="updateSubjects()">
-            <label for="science" style="user-select: none; color: white;">과학 과제 연구</label>
+            <label for="science" style="user-select: none; color: black;">과학 과제 연구</label>
         </div>
         <div>
             <input type="checkbox" id="art" value="Art" onchange="updateSubjects()">
-            <label for="art" style="user-select: none; color: white;">미술</label>
+            <label for="art" style="user-select: none; color: black;">미술</label>
         </div>
     </div>
     <div id="selected-subjects"></div>
