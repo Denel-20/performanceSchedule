@@ -75,7 +75,7 @@ function updateSubjects() {
         { id: 'travel-b', data: '2025. 3. 28 (0교시)' , name: '여행지리B', details: '내용이 지정되지 않았습니다.' },
         { id: 'travel-c', data: '2025. 3. 29 (0교시)' , name: '여행지리C', details: '내용이 지정되지 않았습니다.' },
         { id: 'science', data: '2025. 3. 30 (0교시)' , name: '과학 과제 연구', details: '내용이 지정되지 않았습니다.' },
-        { id: 'art', data: '2025. 3. 14 (4교시)' , name: '미술', details: '진로와 관련된 책 한권 빌려오기' }
+        { id: 'art', data: '2025. 3. 31 (0교시)' , name: '미술', details: '내용이 지정되지 않았습니다.' }
     ];
 
     const subjectContainer = document.getElementById('selected-subjects');
