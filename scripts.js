@@ -1,3 +1,31 @@
+function saveAllCheckboxStates() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const state = {};
+
+    checkboxes.forEach(checkbox => {
+        state[checkbox.id] = {
+            checked: checkbox.checked,
+            indeterminate: checkbox.indeterminate
+        };
+    });
+
+    localStorage.setItem('checkboxStates', JSON.stringify(state));
+}
+
+function loadAllCheckboxStates() {
+    const state = JSON.parse(localStorage.getItem('checkboxStates') || '{}');
+
+    Object.keys(state).forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox) {
+            checkbox.checked = state[id].checked;
+            checkbox.indeterminate = state[id].indeterminate;
+        }
+    });
+
+    updateSubjects()
+}
+
 function toggleSubjects() {
     const subjectList = document.getElementById('subject-list');
     if (subjectList.style.display === 'none') {
@@ -5,6 +33,7 @@ function toggleSubjects() {
     } else {
         subjectList.style.display = 'none';
     }
+    saveAllCheckboxStates();
 }
 
 function toggleParentAndChildren(parentId, childrenId) {
@@ -13,7 +42,10 @@ function toggleParentAndChildren(parentId, childrenId) {
 
     childrenCheckboxes.forEach(child => {
         child.checked = parentCheckbox.checked;
+        child.indeterminate = false;
     });
+
+    saveAllCheckboxStates();
 }
 
 function toggleDetails(itemId) {
@@ -23,6 +55,7 @@ function toggleDetails(itemId) {
     } else {
         itemContent.style.display = 'none';
     }
+    saveAllCheckboxStates();
 }
 
 function updateParentCheckbox(parentId, childrenId) {
@@ -41,13 +74,15 @@ function updateParentCheckbox(parentId, childrenId) {
         parentCheckbox.checked = false;
         parentCheckbox.indeterminate = true;
     }
+
+    saveAllCheckboxStates();
 }
 
 function updateSubjects() {
     const subjects = [
-        { id: 'art', data: '2025. 4. 4 (4교시)' , name: '미술', details: ['자신의 진로와 관련된 책 속 한 문장을 일러스트와 어울리게 자신의 서체로 표현한다.', ' *문장을 암기하여 실시한다.(문장 또는 책 수정시 반드시 리로스쿨 수정정)'] },
-        { id: 'art', data: '2025. 4. 11 (4교시)' , name: '미술', details: ['자신의 진로와 관련된 책 속 한 문장을 일러스트와 어울리게 자신의 서체로 표현한다.', ' *문장을 암기하여 실시한다.(문장 또는 책 수정시 반드시 리로스쿨 수정정)'] },
-        { id: 'art', data: '2025. 4. 18 (4교시)' , name: '미술', details: ['캘리그래피 발표대본을 자유 형식으로 200자 원고 작성하기', ' *책제목, 저자, 선택 문구 정확히 소개']}
+        { id: 'art', data: '2025. 4. 4 (4교시)', name: '미술', details: ['자신의 진로와 관련된 책 속 한 문장을 일러스트와 어울리게 자신의 서체로 표현한다.', '*문장을 암기하여 실시한다.(문장 또는 책 수정 시 반드시 리로스쿨 수정정)'] },
+        { id: 'art', data: '2025. 4. 11 (4교시)', name: '미술', details: ['자신의 진로와 관련된 책 속 한 문장을 일러스트와 어울리게 자신의 서체로 표현한다.', '*문장을 암기하여 실시한다.(문장 또는 책 수정 시 반드시 리로스쿨 수정정)'] },
+        { id: 'art', data: '2025. 4. 18 (4교시)', name: '미술', details: ['캘리그래피 발표 대본을 자유 형식으로 200자 원고 작성하기', '*책 제목, 저자, 선택 문구 정확히 소개'] }
     ];
 
     const subjectContainer = document.getElementById('selected-subjects');
@@ -70,13 +105,13 @@ function updateSubjects() {
         const tomorrow = new Date();
         tomorrow.setDate(today.getDate() + 1);
         const weekLater = new Date();
-        weekLater.setDate(today.getDate() + 7);
+        weekLater.setDate(today.getDate() + 5);
 
         if (subjectDate.toDateString() === today.toDateString() || subjectDate.toDateString() === tomorrow.toDateString()) {
             subjectBar.style.backgroundColor = '#FFBBC6';
         } else if (subjectDate > tomorrow && subjectDate <= weekLater) {
             subjectBar.style.backgroundColor = '#FFFF8C';
-        }  else if (subjectDate > weekLater) {
+        } else if (subjectDate > weekLater) {
             subjectBar.style.backgroundColor = '#C8FAC8';
         } else if (subjectDate < today) {
             subjectBar.style.backgroundColor = '#F4F4F4';
@@ -103,3 +138,9 @@ function updateSubjects() {
         subjectContainer.appendChild(subjectBar);
     });
 }
+
+window.onload = loadAllCheckboxStates;
+
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', saveAllCheckboxStates);
+});
