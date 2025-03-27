@@ -125,7 +125,7 @@ function updateSubjects() {
         } else if (subjectDate > tomorrow && subjectDate <= weekLater) {
             subjectBar.style.backgroundColor = '#FFFF8C';
         } else if (subjectDate > weekLater) {
-            subjectBar.style.backgroundColor = '#C8FAC8';
+            subjectBar.style.backgroundColor = '#96FFFF';
         } else if (subjectDate < today) {
             subjectBar.style.backgroundColor = '#F4F4F4';
         }
